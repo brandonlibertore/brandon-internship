@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import SkeletonHotCollections from "../UI/SkeletonHotCollections";
-import NftBox from "../UI/NftBox";
+import NftBox from "../UI/NftBoxHotCollections";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -68,7 +68,7 @@ const HotCollections = () => {
             {loading
               ? new Array(6)
                   .fill(0)
-                  .map((_, index) => <SkeletonHotCollections />)
+                  .map((_, index) => <SkeletonHotCollections key={index} />)
               : nft.map((details) => (
                   <NftBox
                     key={details.code}
