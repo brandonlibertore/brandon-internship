@@ -1,0 +1,57 @@
+.skeleton__avatar--wrapper{
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+}
+
+.skeleton__avatar--img-topSellers{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: lightgrey;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    color: lightgrey;
+    position: relative;
+}
+
+.skeleton__topSellers--title,
+.skeleton__topSellers--price{
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+    color: lightgrey !important;
+    background: lightgrey;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 8px;
+}
+
+.skeleton__topSellers--title{
+    width: 100px;
+}
+
+.skeleton__topSellers--price{
+    width: 60px;
+}
+
+
+.shimmerBG {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+    background-image: linear-gradient(to right, lightgrey 0%, #edeef1 45%, #f6f7f8 70%, lightgrey 90%);
+}
+
+@-webkit-keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
