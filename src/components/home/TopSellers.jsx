@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import SkeletonTopSellers from "../UI/SkeletonTopSellers";
 import NftBoxTopSellers from "../UI/NftBoxTopSellers";
 
 const TopSellers = () => {
@@ -32,7 +33,9 @@ const TopSellers = () => {
           <div className="col-md-12">
             <ol className="author_list">
               {loading
-                ? ""
+                ? new Array(12)
+                    .fill(0)
+                    .map((_, index) => <SkeletonTopSellers key={index} />)
                 : nft.map((details) => (
                     <NftBoxTopSellers
                       key={details.id}
