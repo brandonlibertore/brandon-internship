@@ -71,8 +71,10 @@ const NewItems = () => {
               : nft.map((details) => (
                   <NftBoxNewItems
                     key={details.id}
+                    authorId={details.authorId}
                     authorImage={details.authorImage}
                     nftImage={details.nftImage}
+                    nftId={details.nftId}
                     title={details.title}
                     price={details.price}
                     likes={details.likes}
