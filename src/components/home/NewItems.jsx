@@ -5,6 +5,9 @@ import SkeletonNewItems from "../UI/SkeletonNewItems";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const NewItems = () => {
   const [loading, setLoading] = useState(false);
@@ -54,7 +57,13 @@ const NewItems = () => {
   };
 
   return (
-    <section id="section-items" className="no-bottom">
+    <section
+      id="section-items"
+      className="no-bottom"
+      data-aos="fade-up"
+      data-aos-delay="500"
+      data-aos-duration="1000"
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
