@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SkeletonTopSellers from "../UI/SkeletonTopSellers";
 import NftBoxTopSellers from "../UI/NftBoxTopSellers";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const TopSellers = () => {
   const [loading, setLoading] = useState(false);
@@ -21,7 +24,13 @@ const TopSellers = () => {
   }, []);
 
   return (
-    <section id="section-popular" className="pb-5">
+    <section
+      id="section-popular"
+      className="pb-5"
+      data-aos="fade-up"
+      data-aos-delay="500"
+      data-aos-duration="1000"
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
