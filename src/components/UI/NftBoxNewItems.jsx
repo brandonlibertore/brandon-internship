@@ -3,20 +3,19 @@ import { Link } from "react-router-dom";
 import "../../css/styles/NftBoxNewItems.css";
 
 export default function NftBoxNewItems({
+  authorId,
   authorImage,
   nftImage,
+  nftId,
   title,
   price,
   likes,
   expiryDate,
 }) {
   let nowTime = Date.now();
-  // let seconds = expiryDate > 0 ? (expiryDate - nowTime) / 1000 : 0;
   const [seconds, setSeconds] = useState(
     expiryDate > 0 ? (expiryDate - nowTime) / 1000 : 0
   );
-  // const [minutes, setMinutes] = useState((expiryDate - nowTime) / 1000 / 60);
-  // const [hours, setHours] = useState((expiryDate - nowTime) / 1000 / 60 / 24);
 
   useEffect(() => {
     if (seconds > 0) {
@@ -33,7 +32,7 @@ export default function NftBoxNewItems({
       <div className="nft__item">
         <div className="author_list_pp">
           <Link
-            to="/author"
+            to={`/author/${authorId}`}
             data-bs-toggle="tooltip"
             data-bs-placement="top"
             title="Creator: Monica Lucas"
@@ -97,12 +96,12 @@ export default function NftBoxNewItems({
             </div>
           </div>
 
-          <Link to="/item-details">
+          <Link to={`/item-details/${nftId}`}>
             <img src={nftImage} className="lazy nft__item_preview" alt="" />
           </Link>
         </div>
         <div className="nft__item_info">
-          <Link to="/item-details">
+          <Link to={`/item-details/${nftId}`}>
             <h4>{title}</h4>
           </Link>
           <div className="nft__item_price">{price} ETH</div>
@@ -115,7 +114,3 @@ export default function NftBoxNewItems({
     </div>
   );
 }
-
-// export default function NftBoxNewItems() {
-//   return <div>{console.log(1)}</div>;
-// }
