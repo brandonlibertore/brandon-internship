@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../../css/styles/SkeletonAuthor.css";
 
 export default function SkeletonAuthor() {
