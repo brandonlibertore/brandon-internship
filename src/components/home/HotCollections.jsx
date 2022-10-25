@@ -73,6 +73,8 @@ const HotCollections = () => {
                   <NftBox
                     key={details.code}
                     nftImage={details.nftImage}
+                    nftId={details.nftId}
+                    authorId={details.authorId}
                     authorImage={details.authorImage}
                     title={details.title}
                     code={details.code}
