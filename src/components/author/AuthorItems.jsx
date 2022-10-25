@@ -22,16 +22,14 @@ const AuthorItems = ({ authorImage }) => {
     fetchNft();
   }, []);
 
-  console.log(nft);
-
   return (
     <div className="de_tab_content">
       <div className="tab-1">
         <div className="row">
           {loading
             ? new Array(8).fill(0).map((_, index) => (
-                <div className="explore__nft--wrapper">
-                  <SkeletonNewItems key={index} />
+                <div className="explore__nft--wrapper" key={index}>
+                  <SkeletonNewItems />
                 </div>
               ))
             : nft.map((details) => (
