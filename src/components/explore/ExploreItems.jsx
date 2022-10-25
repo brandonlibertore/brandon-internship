@@ -24,7 +24,6 @@ const ExploreItems = () => {
 
   const loadMore = () => {
     setIndex(index + 4);
-    console.log(index);
     if (index >= nft.length) {
       setIsCompleted(true);
     } else {
