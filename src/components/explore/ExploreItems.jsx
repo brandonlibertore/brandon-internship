@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import SkeletonNewItems from "../UI/SkeletonNewItems";
 import NftBoxNewItems from "../UI/NftBoxNewItems";
 import "../../css/styles/ExploreItems.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const ExploreItems = () => {
   const [loading, setLoading] = useState(false);
@@ -37,7 +40,7 @@ const ExploreItems = () => {
 
   return (
     <>
-      <div>
+      <div data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
         <select
           id="filter-items"
           defaultValue=""
@@ -51,12 +54,22 @@ const ExploreItems = () => {
       </div>
       {loading
         ? new Array(8).fill(0).map((_, index) => (
-            <div className="explore__nft--wrapper">
+            <div
+              className="explore__nft--wrapper"
+              data-aos="fade-in"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
               <SkeletonNewItems key={index} />
             </div>
           ))
         : initialPosts.map((details) => (
-            <div className="explore__nft--wrapper">
+            <div
+              className="explore__nft--wrapper"
+              data-aos="fade-in"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
               <NftBoxNewItems
                 key={details.id}
                 authorId={details.authorId}

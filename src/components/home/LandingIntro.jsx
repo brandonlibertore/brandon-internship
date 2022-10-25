@@ -1,8 +1,17 @@
 import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const LandingIntro = () => {
   return (
-    <section id="section-intro" className="no-top no-bottom">
+    <section
+      id="section-intro"
+      className="no-top no-bottom"
+      data-aos="fade-up"
+      data-aos-delay="500"
+      data-aos-duration="1000"
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-4 col-md-6 mb-sm-30">
